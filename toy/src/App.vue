@@ -1,50 +1,12 @@
 <template>
-  
-  <div class="menu">
-
-    <a v-for="(a,i) in 메뉴들" :key="i">{{a}} {{i}}</a>
-     
-  
-     
-
-
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
-  
-  <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-
-<!-- <div>
-  <h4>역삳동</h4>
-  
-  </div>  
-   -->
- 
-
-    
 </template>
-
-<script>
-// import HelloWorld from './components/HelloWorld.vue'
-
-
-
-
-export default {
-  name: 'app',
-data(){
-
-return {
-  메뉴들:['Home','Shop','About'],
-  products :['역삼동원룸','천호동원룸','마포구원룸']
-}
-
-},
-
-
-  components: {
-    // HelloWorld
-  }
-}
-</script>
 
 <style>
 #app {
@@ -53,20 +15,17 @@ return {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
+}
+#nav {
+  padding: 30px;
 }
 
-.menu {
-  background: darkslateblue;
-  padding: 15px;
-  border-radius: 5px;
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
 }
 
-.menu a {
-  color: white;
-  padding:10px;
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
-
-
-
 </style>
