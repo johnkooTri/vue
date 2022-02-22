@@ -1,17 +1,40 @@
 <template>
   <div id="app">
+    
+    <div class="black-bg" v-if="modalStatus==true">
+      <div class="white-bg">
+        <h4>상세페이지임</h4>
+        <p>상세페이지 내용임</p>
+         <button @click="closedlg()">닫기</button>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+    
     <div class="menu">
       <a v-for="(a, i) in menus" :key="i">{{ a }}</a>
     </div>
 
-    <div v-for="(a, i) in products" :key="i">
-      <img :src="a.img" class="room-img">
+
+
+
+
+
+
+
+
+
+    <div v-for="(a, i) in onerooms" :key="i">
+      <img :src="a.image" class="room-img">
       <!-- {{imgpath[i]}} -->
 
       <!-- <img src="./assets/room0.jpg" class="room-img" /> -->
 
-      <h4 class="red" :style="style1">{{ a.room }}</h4>
-      <p>50만원</p>
+      <h4 class="red" :style="style1" @click="modalStatus=true">{{ a.title }}</h4>
+      <p>{{a.price}}</p>
       <!-- <button v-on:click="callcnt++">허위매물신고</button><span>신고수 : {{ callcnt }}</span> -->
       <!-- <button @mouseover="increase(i)">허위매물신고</button> -->
       <button v-on:click="increase(i)">허위매물신고</button>
@@ -23,13 +46,18 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 
+import roomdiscData from './assets/oneroom.js'
+
+
 export default {
   name: "app",
   data() {
     return {
+      modalStatus:false,
       price1: 60,
       price2: 70,
       style1: "color : blue",
+      onerooms:roomdiscData,
       products: [
         
         {
@@ -58,6 +86,12 @@ export default {
       this.imgpath = "./assets/room" + i + ".jpg";
       // console.log(this.imgpath);
       this.$forceUpdate();
+    },
+
+    closedlg(){
+
+        this.modalStatus=false;
+
     },
 
     increase(i) {
@@ -90,7 +124,7 @@ export default {
 }
 
 .room-img {
-  width: 100%;
+  width: 50%;
   margin-top: 40px;
 }
 
@@ -104,4 +138,28 @@ export default {
   color: white;
   padding: 10px;
 }
+
+body {
+  margin : 0
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.black-bg{
+  width:100%;height: 100%;
+  background: rgba(0,0,0,0,5);
+  position: fixed; padding: 20px;
+}
+
+.white-bg{
+  width:100%;background: white;
+  border-radius:8px;
+  padding: 20px;
+}
+
+
+
+
 </style>
