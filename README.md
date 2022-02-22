@@ -32,6 +32,10 @@ html 하드코딩 방지
 
     <p  :style="my_style">
     <img :src="imgPath">
+    v-bind 약어 :
+    v-bind:href=“url”을 줄여서 :href=”url” 이라고 표기해줄 수 있습니다.
+
+    v-on:click=“doSomething”을 줄여서 @click=”doSomething” 이라고 표기해줄 수 있습니다.
 
 ## for 문
 

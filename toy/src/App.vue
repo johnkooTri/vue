@@ -10,21 +10,13 @@
     </div>
     
     
-    
-    
+    <h1 v-once>{{ title }}</h1>
+    <p>{{ sayHello() }}</p>
     
     
     <div class="menu">
       <a v-for="(a, i) in menus" :key="i">{{ a }}</a>
     </div>
-
-
-
-
-
-
-
-
 
 
     <div v-for="(a, i) in onerooms" :key="i">
@@ -34,11 +26,11 @@
       <!-- <img src="./assets/room0.jpg" class="room-img" /> -->
 
       <h4 class="red" :style="style1" @click="modalStatus=true">{{ a.title }}</h4>
-      <p>{{a.price}}</p>
+      <p>{{a.price}} 원</p>
       <!-- <button v-on:click="callcnt++">허위매물신고</button><span>신고수 : {{ callcnt }}</span> -->
       <!-- <button @mouseover="increase(i)">허위매물신고</button> -->
-      <button v-on:click="increase(i)">허위매물신고</button>
-      <span>신고수 : {{ callcnt[i] }}</span>
+      <button v-on:click="a.callcnt++">허위매물신고</button>
+      <span>신고수 : {{ a.callcnt }}  , {{ i }} </span>
     </div>
   </div>
 </template>
@@ -56,6 +48,7 @@ export default {
       modalStatus:false,
       price1: 60,
       price2: 70,
+      title:'hello vue world!',
       style1: "color : blue",
       onerooms:roomdiscData,
       products: [
@@ -75,11 +68,14 @@ export default {
           
       ],
       menus: ["Home", "Shop", "About"],
-      callcnt: [0, 1, 2],
+      // callcnt: [0, 1, 2],
       imgpath2: "./assets/room0.jpg",
       imgpath: ["./assets/room0.jpg","./assets/room1.jpg","./assets/room2.jpg"]
     };
   },
+
+  
+
 
   methods: {
     makeimg(i) {
@@ -88,9 +84,18 @@ export default {
       this.$forceUpdate();
     },
 
-    closedlg(){
+    sayHello(){
+      this.title = "안녕하십니까!"
+     return this.title
+    },
 
+
+    closedlg(){
+     
+
+      
         this.modalStatus=false;
+      
 
     },
 
@@ -102,6 +107,8 @@ export default {
       this.callcnt[i] = this.callcnt[i] + 1;
 
       this.$forceUpdate();
+
+     
 
       // this.callcnt[i]=4+i;
     },
