@@ -10,11 +10,14 @@
     </div>
     
     
-    <h1 v-once>{{ title }}</h1>
-    <p>{{ sayHello() }}</p>
+    <!-- <h1 v-once>{{ title }}</h1> -->
+    
+
+    <!-- <p>{{ sayHello() }}</p> -->
     
     
     <div class="menu">
+      <p v-html="aLinkToNaver"></p>
       <a v-for="(a, i) in menus" :key="i">{{ a }}</a>
     </div>
 
@@ -50,6 +53,7 @@ export default {
       price2: 70,
       title:'hello vue world!',
       style1: "color : blue",
+      aLinkToNaver: "<a href='http://www.naver.com'>네이버매물</a>",
       onerooms:roomdiscData,
       products: [
         
