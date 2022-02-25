@@ -29,11 +29,11 @@
       <!-- <img src="./assets/room0.jpg" class="room-img" /> -->
 
       <h4 class="red" :style="style1" @click="modalStatus=true">{{ a.title }}</h4>
-      <p>{{a.price}} 원</p>
-      <!-- <button v-on:click="callcnt++">허위매물신고</button><span>신고수 : {{ callcnt }}</span> -->
-      <!-- <button @mouseover="increase(i)">허위매물신고</button> -->
+      
+      <p>{{ a.price &lt; 400000 ? "특가" : "세일가"}} {{ a.prica }}원</p>
+
       <button v-on:click="a.callcnt++">허위매물신고</button>
-      <span>신고수 : {{ a.callcnt }}  , {{ i }} </span>
+      <span>신고수 : {{ a.callcnt }} </span>
     </div>
   </div>
 </template>
