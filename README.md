@@ -102,3 +102,15 @@ html 코드를 직접 입력해줄때 사용하는 디렉티브
 
 {{ data }} 는 vue 입장에서는 이것이 html 코드인지, 문자열인지 구분할 수 있는 방법이 전혀 없다.
 이럴때 v-html 사용한다.
+
+## 삼항연산자
+**조건부 삼항 연산자**는 JavaScript에서 세 개의 피연산자를 취할 수 있는 유일한 연산자입니다. 맨 앞에 조건문 들어가고. 그 뒤로 물음표(`?`)와 조건이 참[truthy](https://developer.mozilla.org/ko/docs/Glossary/Truthy)이라면 실행할 식이 물음표 뒤로 들어갑니다. 바로 뒤로 콜론(`:`)이 들어가며 조건이 거짓[falsy](https://developer.mozilla.org/ko/docs/Glossary/Falsy)이라면 실행할 식이 마지막에 들어갑니다. 보통 [`if`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/if...else) 명령문의 단축 형태로 쓰입니다.
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+    <div id="app">
+    
+    {{ count * 3 > 10 ? "10보다 큽니다." : "10보다 작거나 같습니다."}}
+    
+    <button v-on:click="count ++">클릭</button>
+    
+    </div>
