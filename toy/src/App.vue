@@ -10,8 +10,10 @@
     </div>
     
     
-    <!-- <h1 v-once>{{ title }}</h1> -->
-    
+    <div>
+      <p>원본 메시지 : {{ message }}</p>
+      <p>역순 메시지 : {{ reversedMessage }}</p>
+    </div>
 
     <!-- <p>{{ sayHello() }}</p> -->
     
@@ -23,14 +25,15 @@
 
 
     <div v-for="(a, i) in onerooms" :key="i">
-      <img :src="a.image" class="room-img">
+      <!-- <img :src="a.image" class="room-img"> -->
       <!-- {{imgpath[i]}} -->
 
       <!-- <img src="./assets/room0.jpg" class="room-img" /> -->
 
       <h4 class="red" :style="style1" @click="modalStatus=true">{{ a.title }}</h4>
       
-      <p>{{ a.price &lt; 400000 ? "특가" : "세일가"}} {{ a.prica }}원</p>
+      <p>{{ comparePrice(a.price)}} {{ a.price }}원</p>
+      <!-- <p>{{ comparePrice }}</p> -->
 
       <button v-on:click="a.callcnt++">허위매물신고</button>
       <span>신고수 : {{ a.callcnt }} </span>
@@ -53,6 +56,7 @@ export default {
       price2: 70,
       title:'hello vue world!',
       style1: "color : blue",
+      message:"안녕하세요",
       aLinkToNaver: "<a href='http://www.naver.com'>네이버매물</a>",
       onerooms:roomdiscData,
       products: [
@@ -90,33 +94,44 @@ export default {
 
     sayHello(){
       this.title = "안녕하십니까!"
-     return this.title
+      return this.title
     },
+
+   comparePrice(price){
+
+     return  price < 400000 ? "오늘의특가" : "세일가"
+
+   },
 
 
     closedlg(){
-     
-
-      
         this.modalStatus=false;
-      
-
     },
 
     increase(i) {
       // console.log(i+"   :  번째 데이터 ");
-
       // console.log(this.callcnt[i]+1);
 
       this.callcnt[i] = this.callcnt[i] + 1;
 
       this.$forceUpdate();
-
-     
-
       // this.callcnt[i]=4+i;
     },
   },
+
+  computed:{
+
+    // comparePrice: function(){
+    //   alert ("computed");
+    // }
+
+      reversedMessage: function () {
+      // `this` 는 vm 인스턴스를 가리킵니다.  
+      return this.message.split('').reverse().join('')
+
+      }
+  },
+
 
   components: {
     // HelloWorld
