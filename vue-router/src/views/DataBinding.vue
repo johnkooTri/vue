@@ -59,6 +59,13 @@
         <button type="button" v-bind:disabled="textValue==''">click</button>
     </div>
 
+    <div class="container" v-bind:class="{ 'active':isActive,'text-red':hasError}">class binding</div>
+
+
+    <div class="container" v-bind:class="[activeClass,errorClass]">Class binding</div>
+
+
+    <div v-bind:style="styleObj">인라인스타일 바인딩</div>
 
 </template>
 
@@ -81,10 +88,35 @@ export default{
             radioValue2:"부산",
             radioValue3:"제주",
             imgSrc:"https://kr.vuejs.org/images/logo.png",
-            textValue:""
+            textValue:"",
+            isActive:true,
+            hasError:true,
+            activeClass:'active',
+            errorClass:'text-red',
+            styleObj:{
+                color:'red',
+                fontSize:'13px'
+            }
 
         };
     }
 }
 
 </script>
+
+<style scoped>
+
+    container{
+        width:100%;
+        height: 200px;
+    }
+    .active{
+        background-color: yellow;
+        font-weight: bold;
+    }
+    .text-red{
+        color:red;
+    }
+
+
+</style>

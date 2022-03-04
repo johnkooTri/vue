@@ -68,9 +68,35 @@ value속성에 데이터 바인딩 하려면 v-bind:value 사용
         <button type="button" v-bind:disabled="textValue==''">click</button>
     </div>
 
- data(){
-     return {
-         textValue:""
-     }
+    data(){
+         return {
+             textValue:""
+            }
 
-     
+## 클래스 바인딩
+
+반드시 적용해야 하는 클래스는 기존 html 방식처럼 사용하고
+조건에 따라 바인딩 할 경우는 v-bind:class 를 이용해서 추가적으로 정의해서 사용
+    
+    <div class="container" v-bind:class="{'active':isActive,'text-red':hasError}">class binding</div>
+
+## 클래스 바인딩 by 배열사용
+
+    <div class="container" v-bind:class="[activeClass,errorClass]">Class binding</div>
+    data(){
+        return{
+            activeClass:'active',
+            errorClass:'text-red'
+        }
+    }
+
+## 인라인 스타일 바인딩
+    <div v-bind:style="styleObj">인라인스타일 바인딩</div>
+      data(){
+        return{
+            styleObj:{
+                color:'red',
+                fontSize:'13px'
+            }
+        }
+    }
