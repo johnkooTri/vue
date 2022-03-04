@@ -11,8 +11,8 @@
     
     
     <div>
-      <p>원본 메시지 : {{ message }}</p>
-      <p>역순 메시지 : {{ reversedMessage }}</p>
+      <!-- <p>원본 메시지 : {{ message }}</p> -->
+      <!-- <p>역순 메시지 : {{ reversedMessage }}</p> -->
     </div>
 
     <!-- <p>{{ sayHello() }}</p> -->
@@ -25,7 +25,7 @@
 
 
     <div v-for="(a, i) in onerooms" :key="i">
-      <!-- <img :src="a.image" class="room-img"> -->
+      <img :src="a.image" class="room-img">
       <!-- {{imgpath[i]}} -->
 
       <!-- <img src="./assets/room0.jpg" class="room-img" /> -->

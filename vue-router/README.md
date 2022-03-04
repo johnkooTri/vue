@@ -59,3 +59,18 @@ value속성에 데이터 바인딩 하려면 v-bind:value 사용
     </span> 
     
     </div>
+
+
+## button 객체의 disabled
+
+    <div>
+        <input type="text" v-model="textValue" />
+        <button type="button" v-bind:disabled="textValue==''">click</button>
+    </div>
+
+ data(){
+     return {
+         textValue:""
+     }
+
+     
