@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import DataBinding from '../views/DataBinding.vue'
+import Event from '../views/EventChange.vue'
 
 
 const routes = [
@@ -22,6 +23,12 @@ const routes = [
     name: 'DataBinding',
     // component: () => import(/* webpackChunkName: "about" */ DataBinding)
     component:DataBinding
+  },
+  {
+    path: '/eventchange',
+    name: 'EventChange',
+    // component: () => import(/* webpackChunkName: "about" */ DataBinding)
+    component:Event
   }
 
 

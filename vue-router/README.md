@@ -100,3 +100,64 @@ value속성에 데이터 바인딩 하려면 v-bind:value 사용
             }
         }
     }
+
+## v-if 와 v-show 차이점
+v-if 의 경우 조건을 만족하면 그 순간에 html 블록이 생성되고,조건에 만족하지 않으면 html 블록은 삭제됩니다.
+v-show 는 조건여부에 관계없이 무조건 html 블록이 생성되며 css의 display를 이용해서 화면에서 숨김/보임 처리를 한다.
+html블록이 화면 내에서 자주 toggle이 일어나면 v-show를 사용하고, 빈도가 적다면 v-if를 사용을 권장
+
+## 이벤트 처리(v-on)
+클릭 이벤트 발생시 여러 개의 함수를 호출하고 싶다면?
+
+    <button type="button" @click="one(),two()">click</button>
+
+    methods:{
+        one(){
+            alert("one");
+        },
+        two(){
+            alert("two:);
+        }
+    }
+
+## Key Event
+    <input @keyup.enter="submit">
+    .enter
+    .up
+    .tab
+    .delete
+    .esc
+    .space
+    .up
+    .down
+    .left
+    .right
+
+## computed
+
+vue 인스턴스 내에 정의된 데이터 값과 연관된 또 하나의 데이터를 정의해서 사용할수 있도록 한다.
+:정의된 데이터 값을 바탕으로 새로운 데이터값을 생성하고, 새로운 데이터값에서 참조하고 있는 기존 데이터 값의 변경을 감지한다.
+그리고 참조하고 있는 데이터 값의 변경과 상관없이 최초에 computed된 함수를 실행한다.
+:computed에 정의해서 ㅏ용하면 화면 내 여러 곳에서 fullName을 사용하더라도 연산은 한번만 일어난다.
+
+    <template>
+    <h1>Full Name : {{fullName}}</h1>
+    </template>
+    <script>
+    export default {
+    data() {
+    return {
+        firstName: 'Seungwon',
+        lastName: 'Go'
+    };
+    },
+    computed: {
+        fullName() {
+        return this.firstName + ' ' + this.lastName;
+        }
+    }
+    }
+    </script>
+
+## Watch
+초기에 할당된 값에서 변경이 일어나야 watch에 정의한 함수를 실행한다.
