@@ -3,6 +3,7 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/databinding">Data Binding</router-link> |
+    <router-link to="/databindinglist">Data BindingList (Axios)</router-link> |
     <router-link to="/eventchange">Event</router-link>
   </div>
   <router-view/>
