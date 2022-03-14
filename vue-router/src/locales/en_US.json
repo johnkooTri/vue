@@ -1,0 +1,11 @@
+{
+    "index": {
+      "greeting": "hello i18n!!!"
+    },
+    "main": {
+      "greeting": "Wellcome"
+    },
+    "home": {
+      "home": "Home"
+    }
+  }

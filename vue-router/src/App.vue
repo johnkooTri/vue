@@ -1,11 +1,22 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">{{$t('home.home')}}</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/databinding">Data Binding</router-link> |
     <router-link to="/databindinglist">Data BindingList (Axios)</router-link> |
     <router-link to="/eventchange">Event</router-link>
   </div>
+
+<div>
+  <select v-model="$i18n.locale">
+      <option
+        v-for="(data, key) in $i18n.availableLocales"
+        :key="key"
+        :value="data"
+        >{{ data }}</option>
+    </select>
+</div>
+
   <router-view/>
 </template>
 

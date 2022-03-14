@@ -1,0 +1,12 @@
+{
+ "index":{
+    "greeting":"안녕 i18n!!!"
+ },
+ "main":{
+   "greeting":"어서오세요"
+ },
+ "home": {
+  "home": "홈"
+}
+
+}
