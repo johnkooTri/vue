@@ -3,6 +3,8 @@ import Home from '../views/Home.vue'
 import DataBinding from '../views/DataBinding.vue'
 import Event from '../views/EventChange.vue'
 import DataBindingList from '../views/DataBindingList2.vue'
+import test from '../views/ChildComponent.vue'
+import test2 from '../views/ParentComponent.vue'
 
 
 const routes = [
@@ -36,7 +38,18 @@ const routes = [
     name: 'DataBindingList',
     // component: () => import(/* webpackChunkName: "about" */ DataBinding)
     component:DataBindingList
-  }
+  },
+  {
+    path:'/test',
+    name:'test',
+    component:test
+  },
+  {
+    path:'/test2',
+    name:'test2',
+    component:test2
+  },
+  
 
 ]
 

@@ -185,3 +185,23 @@ vue 인스턴스 내에 정의된 데이터 값과 연관된 또 하나의 데�
 
 Axios 는 서버와 데이터를 송수신 할 수 있는 http 비동기 통신 라이브러리
 promise 객체 형태로 값을 return 한다.
+
+
+
+## 부모 컴포넌트에서 자식 컴포넌트의 이벤트 직접 발생시키기
+    <template>
+    <child-component @send-message="sendMessage" ref="child_component" />
+    </template>
+    <script>
+        import ChildComponent from './ChildComponent';
+        export default {
+            components: {ChildComponent},
+            mounted() {
+                this.$refs.child_component.$refs.btn.click();
+            }
+    }
+    </script>
+
+### html 태그에 ref="id"를 지정하면 Vue 컴포넌트 함수에서 this.$refs를 통해 접근이 가능
+ref 속성은 html의 id와 비슷한 기능이고 ref는 유일한 키값으로 사용해야 한다.
+부모 컴포넌트에서 자식컴포넌트인 child-component 에 ref="child_component"를 지정해서 $refs로 접근할수 있도록 함

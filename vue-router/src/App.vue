@@ -4,7 +4,11 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/databinding">Data Binding</router-link> |
     <router-link to="/databindinglist">Data BindingList (Axios)</router-link> |
-    <router-link to="/eventchange">Event</router-link>
+    <router-link to="/eventchange">Event</router-link> | 
+    <router-link to="/test">test</router-link> | 
+    <router-link to="/test2">test2</router-link>
+
+
   </div>
 
 <div>
