@@ -6,7 +6,8 @@
     <router-link to="/databindinglist">Data BindingList (Axios)</router-link> |
     <router-link to="/eventchange">Event</router-link> | 
     <router-link to="/test">test</router-link> | 
-    <router-link to="/test2">test2</router-link>
+    <router-link to="/test2">test2</router-link> | 
+    <router-link to="/test3">test3</router-link>
 
 
   </div>

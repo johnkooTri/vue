@@ -5,6 +5,7 @@ import Event from '../views/EventChange.vue'
 import DataBindingList from '../views/DataBindingList2.vue'
 import test from '../views/ChildComponent.vue'
 import test2 from '../views/ParentComponent.vue'
+import test3 from '../views/ParentComponent2.vue'
 
 
 const routes = [
@@ -49,7 +50,11 @@ const routes = [
     name:'test2',
     component:test2
   },
-  
+  {
+    path:'/test3',
+    name:'test3',
+    component:test3
+  }
 
 ]
 
