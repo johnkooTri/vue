@@ -209,3 +209,7 @@ ref 속성은 html의 id와 비슷한 기능이고 ref는 유일한 키값으로
 ### 부모 컴포넌트에서 자식 컴포넌트 함수를 직접 호출도 가능
 
     this.$refs.child_component.callFromParent();
+
+## 자식 컴포넌트에서 부모 컨포넌트로 이벤트/데이터 전달하기
+
+    $emit

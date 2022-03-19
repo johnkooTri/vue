@@ -6,6 +6,8 @@ import DataBindingList from '../views/DataBindingList2.vue'
 import test from '../views/ChildComponent.vue'
 import test2 from '../views/ParentComponent.vue'
 import test3 from '../views/ParentComponent2.vue'
+import test4 from '../views/ParentComponent4.vue'
+import test5 from '../views/ParentComponent5.vue'
 
 
 const routes = [
@@ -54,7 +56,19 @@ const routes = [
     path:'/test3',
     name:'test3',
     component:test3
+  },
+  {
+    path:'/test4',
+    name:'test4',
+    component:test4
+  },
+  {
+    path:'/test5',
+    name:'test5',
+    component:test5
   }
+
+
 
 ]
 
