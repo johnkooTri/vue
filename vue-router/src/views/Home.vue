@@ -1,6 +1,11 @@
 <template>
   <div class="home">
   <Pagetitle title="부모 컴포넌트에서 자식컴포넌트로 데이터 전달 demo"/>
+
+  <page-title: title="title"/>
+
+  <!-- <blog-post v-bind="post"/> -->
+
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -17,5 +22,9 @@ export default {
     HelloWorld
     ,Pagetitle
   }
+
 }
+
+
+ 
 </script>
