@@ -8,7 +8,7 @@ import test2 from '../views/ParentComponent.vue'
 import test3 from '../views/ParentComponent2.vue'
 import test4 from '../views/ParentComponent4.vue'
 import test5 from '../views/ParentComponent5.vue'
-import test6 from '../views/ProvideInject.vue'
+import test6 from '../views/StoreAccess.vue'
 
 
 const routes = [
